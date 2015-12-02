@@ -1,5 +1,3 @@
-(function () {
-  angular.module('tour')
-    .controller('homeController', ['$scope', function ($scope) {
-    }]);
-})()
+angular.module('tour')
+  .controller('homeController', ['$scope', function ($scope) {
+  }]);

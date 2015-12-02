@@ -10,10 +10,56 @@ html, body {
 }
 
 .header {
-  background: #ccc;
+  background: #1bb485;
   height: 60pt;
+  margin-bottom: 15pt;
 
   h3 {
     line-height: 60pt;
+    color: #fff;
+    padding-left: 15pt;
+  }
+}
+
+.container {
+  width: 940pt;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+footer {
+  height: 200pt;
+  background: #eee;
+
+  nav {
+    margin-top: 40pt;
+    height: 150pt;
+    margin-right: 20pt;
+    float: right;
+    clear: both;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 20pt;
+
+      a {
+        color: lighten(green, 10%);
+        text-decoration: none;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .copy {
+    width: 100%;
+    float: right;
+    text-align: center;
+    font-style: italic;
+    font-weight: 100;
   }
 }
