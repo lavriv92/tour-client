@@ -6,7 +6,8 @@ var path = require('path'),
     uglify = require('gulp-uglify'),
     clean = require('gulp-clean'),
     changed = require('gulp-changed'),
-    less = require('gulp-less');
+    less = require('gulp-less'),
+    minifyCss = require('gulp-minify-css');
 
 var env = process.env || 'development';
 
@@ -36,11 +37,10 @@ gulp.task('tour:build-vendor', function () {
 });
 
 gulp.task('tour:build-stylsheets', function () {
-  gulp.src('app/stylesheeets/**/*.less')
-    .pipe(less({
-      paths: [path.join(__dirname, 'less')]
-    }))
-    .pipe(gulp.dest('./dist/css'))
+  return gulp.src('app/stylesheets/**/*.less')
+    .pipe(less())
+    .pipe(minifyCss())
+    .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
 });
 
@@ -74,7 +74,7 @@ gulp.task('tour:watch', ['tour:clean'], function () {
   gulp.watch('app/**/*.js', ['tour:build-app']);
   gulp.watch('app/**/*.html', ['tour:build-templates']);
   gulp.watch('app/index.html', ['tour:build-index']);
-  gulp.watch('app/stylesheeets/**/*.less', ['tour:build-stylsheets']);
+  gulp.watch('app/stylesheets/**/*.less', ['tour:build-stylsheets']);
 });
 
 gulp.task('default', ['tour:clean'], function () {
