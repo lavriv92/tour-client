@@ -15,5 +15,13 @@ angular.module('tour')
     .when('/about', {
       templateUrl: 'modules/about/about.template.html',
       controller: 'aboutController'
+    })
+    .when('/login', {
+      templateUrl: 'modules/login/login.template.html',
+      controller: 'loginController'
+    })
+    .when('/register', {
+      templateUrl: 'modules/register/register.template.html',
+      controller: 'registerController'
     });
   }]);

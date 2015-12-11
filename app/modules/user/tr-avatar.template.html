@@ -1,0 +1,10 @@
+<div class="user-avatar">
+	<span ng-if="user">
+		<span>{{user.firstName}}</span>
+		<span>{{user.lastName}}</span>
+	</span>
+	<span ng-if="!user">
+		<a href="#/login">Login</a>
+		<a href="#/register">Register</a>
+	</span>
+</div>
