@@ -1,17 +1,18 @@
 <section class="tr-page-container">
 	<h3>Login to Trip on</h3>
 
-	<section class="tr-form tr-login-form">
+	<form class="tr-form tr-login-form">
 		<div class="tr-form-group">
-			<input class="tr-form-control" placeholder="Username or Email" />
+			<input class="tr-form-control" ng-model="::username" placeholder="Username or Email" />
 		</div>
 		<div class="tr-form-group">
-			<input class="tr-form-control" type="password" placeholder="Password" />
+			<input class="tr-form-control" ng-model="::password" type="password" placeholder="Password" />
 		</div>
 		<div class="tr-form-group">
-			<button class="tr-btn tr-btn-block">Login</button>
+			<button class="tr-btn tr-btn-block" ng-click="login(username, password)">Login</button>
 		</div>
-	</section>
+	</form>
+	<section>Or Social Networks</section>
 	<section class="tr-social">
 		<div class="tr-social-group">
 			<button class="tr-btn tr-btn-block tr-facebook">Facebook</button>

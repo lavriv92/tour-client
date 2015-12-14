@@ -2,6 +2,8 @@
 	<span ng-if="user">
 		<span>{{user.firstName}}</span>
 		<span>{{user.lastName}}</span>
+
+		<span ng-click="logout()">Logout</span>
 	</span>
 	<span ng-if="!user">
 		<a href="#/login">Login</a>

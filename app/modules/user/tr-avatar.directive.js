@@ -17,7 +17,7 @@ angular.module('tour')
 					scope.$applyAsync();
 				});
 
-				scope.logOut = function() {
+				scope.logout = function() {
 					$rootScope.user = null;
 					$rootScope.$broadcast('tour:userChanged', null);
 				};

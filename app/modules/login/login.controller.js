@@ -1,13 +1,13 @@
 angular.module('tour')
 	.controller('loginController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
-		$scope.login = function() {
+		$scope.login = function(username, password) {
 			$scope.user = {
-				first_name: 'First',
-				last_name: 'Last'
+				firstName: 'First',
+				lastName: 'Last'
 			};
 
-			$rootScope.$broadcast('tour:userChanged', function() {});
+			$rootScope.$broadcast('tour:userChanged', $scope.user);
 
 		};
 	}]);
