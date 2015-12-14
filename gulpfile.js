@@ -67,7 +67,9 @@ gulp.task('tour:build-index', function () {
 
 gulp.task('tour:clean', function () {
   return gulp.src('dist/**')
-    .pipe(clean());
+    .pipe(clean({
+      force: true
+    }));
 });
 
 gulp.task('tour:watch', ['tour:clean'], function () {

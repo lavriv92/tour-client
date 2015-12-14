@@ -5,9 +5,41 @@
   font-size: 12pt;
 }
 
-html, body {
+html, body, .tr-wrapper {
   height: 100%;
 }
+
+.tr-container {
+  height: 100%;
+}
+
+.tr-page-container {
+  height: 100%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.tr-form {
+  padding: 10pt;
+
+  .tr-form-group {
+    margin-bottom: 15pt;
+
+    .tr-form-control {
+      font-size: 13pt;
+      padding: 5pt 10pt;
+      outline: none;
+      border-radius: 1pt;
+      box-shadow: 2pt 2pt 2pt #eee inset;
+      border: 1pt solid #ddd;
+
+      &:focus {
+        box-shadow: 1pt 1pt #ddd inset;
+      }
+    }
+  }
+}
+
 
 .header {
   background: #1bb485;
