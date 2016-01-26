@@ -38,8 +38,9 @@ gulp.task('tour:build-vendor', function () {
 
 gulp.task('tour:build-stylsheets', function () {
   return gulp.src('app/stylesheets/**/*.less')
-    .pipe(less())
-    .pipe(minifyCss())
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
 });
