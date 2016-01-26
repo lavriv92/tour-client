@@ -1,12 +1,12 @@
 angular.module('tour')
-	.directive('trAvatar', ['$rootScope', function($rootScope) {
+	.directive('trAvatar', ['$rootScope', '$location', function($rootScope, $location) {
 		return {
 			restrict: 'E',
 			templateUrl: 'modules/user/tr-avatar.template.html',
 			link: function(scope) {
 
 				function restoreLoggedIn (user) {
-					scope.user =  user || $rootScope.user || null;	
+					scope.user =  user || $rootScope.user || null;
 					scope.$applyAsync();
 				}
 
@@ -20,6 +20,7 @@ angular.module('tour')
 				scope.logout = function() {
 					$rootScope.user = null;
 					$rootScope.$broadcast('tour:userChanged', null);
+					$location.path('/login');
 				};
 			}
 		}

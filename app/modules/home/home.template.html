@@ -1,3 +1,23 @@
-<div class="full-height">
-  Home template
+<div>
+    <div class="tr-page-container home-page">
+      <div class="awesome-trips-video">
+        trips-video
+      </div>
+      <div class="plans">
+        <div class="plan-item" ng-repeat="plan in plans">
+          <h3 class="plan-title">{{plan.name}}</h3>
+          <div class="plan-price">
+            <div class="plan-price">{{plan.price}} $</div>
+            <div class="plan-price-descr">
+              per month
+            </div>
+          </div>
+          <div class="">
+            <a href="#/register?plan={{plan.id}}" type="button" class="join-button" ng-click="joinToPlan(plan)" name="button">
+              <i class="icon icon-user-plus"></i>Sign up
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

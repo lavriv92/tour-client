@@ -1,27 +1,55 @@
 <section class="tr-page-container login-page">
 	<h3 class="form-title">Login to Trip on</h3>
 
-	<form class="form">
+	<form class="form" name="loginForm" novalidate>
 		<div class="group">
-			<input class="control" ng-model="::username" placeholder="Username or Email" />
+			<span class="icon icon-user"></span>
+			<input class="control"
+						 ng-model="::username"
+						 name="uName"
+						 required
+						 ng-class="{'error': loginForm.uName.$dirty && loginForm.uName.$invalid, 'success': loginForm.uName.$dirty && loginForm.uName.$valid}"
+						 placeholder="Username or Email" />
+			<span ng-show="loginForm.uName.$dirty">
+				<i ng-show="loginForm.uName.$valid" class="result-icon success icon-checkmark"></i>
+				<i ng-show="loginForm.uName.$invalid" class="result-icon error icon-cross"></i>
+			</span>
 		</div>
 		<div class="group">
-			<input class="control" ng-model="::password" type="password" placeholder="Password" />
+			<span class="icon icon-key"></span>
+			<input class="control"
+						 ng-model="::password"
+						 name="uPassword"
+						 required
+						 type="password"
+						 ng-minlength="6"
+						 ng-class="{'error': loginForm.uPassword.$dirty && loginForm.uPassword.$invalid, 'success': loginForm.uPassword.$dirty && loginForm.uPassword.$valid}"
+						 placeholder="Password" />
+			<span ng-show="loginForm.uPassword.$dirty">
+				<i ng-show="loginForm.uPassword.$valid" class="result-icon success icon-checkmark"></i>
+				<i ng-show="loginForm.uPassword.$invalid" class="result-icon error icon-cross"></i>
+			</span>
 		</div>
 		<div class="group">
-			<button class="tr-btn tr-btn-block" ng-click="login(username, password)">Login</button>
+			<button class="tr-btn tr-btn-block" ng-disabled="loginForm.$invalid" ng-click="login(username, password)">Log in</button>
 		</div>
 	</form>
 	<section class="tr-social">
-		<section class="tr-social-title">Or Social Networks</section>
+		<section class="tr-social-title">or</section>
 		<div class="tr-social-group">
-			<button class="tr-btn tr-btn-block tr-facebook">Facebook</button>
+			<button class="tr-btn tr-btn-block tr-facebook">
+				<i class="icon icon-facebook2"></i>Sign in with Facebook
+			</button>
 		</div>
 		<div class="tr-social-group">
-			<button class="tr-btn tr-btn-block tr-twitter">Twitter</button>
+			<button class="tr-btn tr-btn-block tr-twitter">
+				<i class="icon icon-twitter"></i>Sign in with Twitter
+			</button>
 		</div>
 		<div class="tr-social-group">
-			<button class="tr-btn tr-btn-block tr-google">Google</button>
+			<button class="tr-btn tr-btn-block tr-google">
+				<i class="icon icon-google-plus"></i>Sign in with Google
+			</button>
 		</div>
 	</section>
 </section>
