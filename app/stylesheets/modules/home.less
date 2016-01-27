@@ -1,39 +1,81 @@
-.home-page {
+.title-container {
+  height: 500px;
+  text-align: center;
+  background: url('../images/home-bg.img') no-repeat scroll;
+  background-size: cover;
+  margin-bottom: 50px;
 
-  .awesome-trips-video {
-    height: 500px;
+  .big-text {
+    vertical-align: middle;
+    font-size: 70px;
+    font-weight: 400;
+    padding: 100px 90px;
+    color: #1b85b8;
+    text-shadow: 0 0 2px #fff;
+    padding-top: 100px;
   }
 
+  .login-buttons {
+    margin-bottom: 100px;
+
+    .button-section {
+      margin-bottom: 20px;
+      display: inline-block;
+      margin-left: 10px;
+
+      .link-btn {
+        color: #fff;
+        text-decoration: none;
+        background: #1b85b8;
+        height: 50px;
+        padding: 0 15px;
+        display: inline-block;
+        border-radius: 3px;
+        line-height: 50px;
+        min-width: 100px;
+      }
+    }
+  }
+}
+
+
+.home-page {
   .plans {
     display: flex;
     align-content: space-around;
     width: 100%;
 
+    .plans-title {
+      background: #ccc;
+    }
+
     .plan-item {
       width: 250px;
       height: 300px;
-      border: 2px solid lightgreen;
+      border: 2px solid #559e83;
       margin-left: 20px;
       text-align: center;
 
       .plan-title {
-        background: #eee;
+        background: #ae5a41;
         height: 50px;
         line-height: 50px;
         font-weight: 600;
         font-size: 20px;
+        color: #eee;
       }
 
       .plan-price {
         padding: 10px 0;
         padding-top: 25px;
         font-size: 50px;
-        color: orange;
+        color: #5a5255;
+        font-weight: 300;
       }
 
       .join-button {
         height: 40px;
-        background: #72BB45;
+        background: #559e83;
         line-height: 40px;
         border: none;
         display: inline-block;

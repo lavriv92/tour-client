@@ -1,6 +1,14 @@
 angular.module('tour')
-	.factory('userService', [function() {
+	.factory('userService', ['$http', function() {
 		return {
-			done: true
+			done: true,
+
+			login: function (credentials) {
+				$http.post('/login').then(function () {
+
+				}, function (errors) {
+
+				});
+			}
 		};
 	}])

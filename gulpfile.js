@@ -66,6 +66,12 @@ gulp.task('tour:build-fonts', function () {
     .pipe(connect.reload())
 });
 
+gulp.task('tour:build-images', function () {
+  return gulp.src('app/images/**')
+    .pipe(gulp.dest('./dist/images'))
+    .pipe(connect.reload());
+});
+
 gulp.task('tour:build-index', function () {
   return gulp.src('app/index.html')
     .pipe(gulp.dest('./dist'))
@@ -85,12 +91,13 @@ gulp.task('tour:watch', ['tour:clean'], function () {
   gulp.watch('app/index.html', ['tour:build-index']);
   gulp.watch('app/stylesheets/**/*.less', ['tour:build-stylsheets']);
   gulp.watch('app/stylesheets/fonts/**', ['tour:build-fonts']);
+  gulp.watch('app/images/**', ['tour:build-images']);
 });
 
 gulp.task('default', ['tour:clean'], function () {
-  gulp.start('tour:build-app', 'tour:build-vendor', 'tour:build-index', 'tour:build-templates', 'tour:build-stylsheets', 'tour:build-fonts', 'tour:server', 'tour:watch');
+  gulp.start('tour:build-app', 'tour:build-vendor', 'tour:build-index', 'tour:build-templates', 'tour:build-stylsheets', 'tour:build-fonts', 'tour:build-images', 'tour:server', 'tour:watch');
 });
 
 gulp.task('tour:build', ['tour:clean'], function () {
-  gulp.start('tour:build-app', 'tour:build-vendor', 'tour:build-index', 'tour:build-templates', 'tour:build-stylsheets', 'tour:build-fonts', 'tour:server', 'tour:watch');
+  gulp.start('tour:build-app', 'tour:build-vendor', 'tour:build-index', 'tour:build-templates', 'tour:build-stylsheets', 'tour:build-fonts', 'tour:build-images', 'tour:server', 'tour:watch');
 });
